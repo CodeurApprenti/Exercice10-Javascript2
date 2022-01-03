@@ -2,7 +2,7 @@
 
 /*
 * What follows is the result of much research on cross-browser styling.
-* Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+* Crougeit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
 * Kroc Camen, and the H5BP dev community and team.
 */
 
@@ -10,11 +10,11 @@
  Base styles: opinionated defaults
  ========================================================================== */
 
- html,
- button,
- input,
- select,
- textarea {
+html,
+button,
+input,
+select,
+textarea {
   color: #222;
 }
 
@@ -30,13 +30,13 @@ html {
 */
 
 ::-moz-selection {
-background: #b3d4fc;
-text-shadow: none;
+  background: #b3d4fc;
+  text-shadow: none;
 }
 
 ::selection {
-background: #b3d4fc;
-text-shadow: none;
+  background: #b3d4fc;
+  text-shadow: none;
 }
 
 /*
@@ -44,12 +44,12 @@ text-shadow: none;
 */
 
 hr {
-display: block;
-height: 1px;
-border: 0;
-border-top: 1px solid #ccc;
-margin: 1em 0;
-padding: 0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
 }
 
 /*
@@ -61,7 +61,7 @@ audio,
 canvas,
 img,
 video {
-vertical-align: middle;
+  vertical-align: middle;
 }
 
 /*
@@ -69,9 +69,9 @@ vertical-align: middle;
 */
 
 fieldset {
-border: 0;
-margin: 0;
-padding: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /*
@@ -79,14 +79,14 @@ padding: 0;
 */
 
 textarea {
-resize: vertical;
+  resize: vertical;
 }
 
 /* ==========================================================================
  Browse Happy prompt
  ========================================================================== */
 
- .browsehappy {
+.browsehappy {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
@@ -106,16 +106,20 @@ body {
   height: 100%;
 }
 
-body{
+body {
   position: relative;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #fff;
-  background-color: #ECE5CE;
-  transition: background-color .5s ease;
+  background-color: #ece5ce;
+  transition: background-color 0.5s ease;
 }
 
-body.won { background-color: #8FBE00; }
-body.lost { background-color: #E22D2D; }
+body.won {
+  background-color: #8fbe00;
+}
+body.lost {
+  background-color: #e22d2d;
+}
 
 h1 {
   display: inline-block;
@@ -158,18 +162,20 @@ hr {
 .socket {
   display: inline-block;
   border-radius: 50%;
-  background-color: #C7BF8D;
+  background-color: #c7bf8d;
 }
 
 #guesses {
   display: inline-block;
-  background-color: #E3DCB5;
+  background-color: #e3dcb5;
   border-radius: 3px 0 0 3px;
   padding: 15px 30px;
   font-size: 0;
 }
 
-.guess { margin-top: 15px; }
+.guess {
+  margin-top: 15px;
+}
 
 .option,
 .code .socket,
@@ -180,7 +186,9 @@ hr {
 }
 
 .code .socket + .socket,
-.guess .socket + .socket { margin-left: 10px; }
+.guess .socket + .socket {
+  margin-left: 10px;
+}
 
 .code {
   border-bottom: 2px solid #c7bf8d;
@@ -196,12 +204,10 @@ hr {
 }
 
 .socket.peg {
-  -webkit-animation: bounceIn .4s;
-  -o-animation: bounceIn .4s;
-  animation: bounceIn .4s;
+  -webkit-animation: bounceIn 0.4s;
+  -o-animation: bounceIn 0.4s;
+  animation: bounceIn 0.4s;
 }
-
-
 
 /******************* HINTS *******************/
 
@@ -209,7 +215,7 @@ hr {
   vertical-align: bottom;
   display: inline-block;
   padding: 15px 20px;
-  background-color: #E3DCB5;
+  background-color: #e3dcb5;
   border-radius: 0 3px 3px 0;
   font-size: 0;
 }
@@ -221,19 +227,31 @@ hr {
   box-sizing: border-box;
 }
 
-.hint .row { height: 10px; }
-.hint .row + .row { margin-top: 5px; }
+.hint .row {
+  height: 10px;
+}
+.hint .row + .row {
+  margin-top: 5px;
+}
 
 .hint .socket {
   width: 10px;
   height: 10px;
 }
 
-.hint .socket + .socket { margin-left: 5px; }
+.hint .socket + .socket {
+  margin-left: 5px;
+}
 
-.hint + .hint { margin-top: 15px; }
-.hit { background-color: #000; }
-.almost { background-color: #fff; }
+.hint + .hint {
+  margin-top: 15px;
+}
+.hit {
+  background-color: #000;
+}
+.almost {
+  background-color: #fff;
+}
 
 #modalMessage {
   position: fixed;
@@ -266,7 +284,7 @@ hr {
   left: 0;
   z-index: 1000;
   opacity: 0;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 #modalOverlay.hidden {
@@ -274,33 +292,34 @@ hr {
 }
 
 #modalOverlay.won {
-  background-color: rgba(143, 190, 0, .5);
+  background-color: rgba(143, 190, 0, 0.5);
   visibility: visible;
   opacity: 1;
 }
 
 #modalOverlay.won #modalMessage {
-  background-color: #8FBE00;
+  background-color: #8fbe00;
   border: 5px solid #fff;
 }
 
 #modalOverlay.lost {
-  background-color: rgba(226, 45, 45, .5);
+  background-color: rgba(226, 45, 45, 0.5);
   visibility: visible;
   opacity: 1;
 }
 
 #modalOverlay.lost #modalMessage {
-  background-color: #E22D2D;
+  background-color: #e22d2d;
   border: 5px solid #fff;
 }
 
 #options {
-  margin: 0 auto;
-  padding: 20px 0;
-  display: block;
-  text-align: center;
-  font-size: 0;
+  position: fixed;
+  margin-top: 300px;
+  margin-left: 600px;
+  width: 30%;
+  bottom: 0;
+  background-color: #ece5ce;
 }
 
 #options button + button {
@@ -308,22 +327,27 @@ hr {
 }
 
 @-webkit-keyframes bounceIn {
-  0%, 20%, 40%, 60%, 80%, 100% {
-    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
   0% {
     opacity: 0;
-    -webkit-transform: scale3d(.3, .3, .3);
-    transform: scale3d(.3, .3, .3);
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
   }
   20% {
     -webkit-transform: scale3d(1.1, 1.1, 1.1);
     transform: scale3d(1.1, 1.1, 1.1);
   }
   40% {
-    -webkit-transform: scale3d(.9, .9, .9);
-    transform: scale3d(.9, .9, .9);
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
   }
   60% {
     opacity: 1;
@@ -331,8 +355,8 @@ hr {
     transform: scale3d(1.03, 1.03, 1.03);
   }
   80% {
-    -webkit-transform: scale3d(.97, .97, .97);
-    transform: scale3d(.97, .97, .97);
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97);
   }
   100% {
     opacity: 1;
@@ -342,22 +366,27 @@ hr {
 }
 
 @keyframes bounceIn {
-  0%, 20%, 40%, 60%, 80%, 100% {
-    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
   0% {
     opacity: 0;
-    -webkit-transform: scale3d(.3, .3, .3);
-    transform: scale3d(.3, .3, .3);
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
   }
   20% {
     -webkit-transform: scale3d(1.1, 1.1, 1.1);
     transform: scale3d(1.1, 1.1, 1.1);
   }
   40% {
-    -webkit-transform: scale3d(.9, .9, .9);
-    transform: scale3d(.9, .9, .9);
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
   }
   60% {
     opacity: 1;
@@ -365,8 +394,8 @@ hr {
     transform: scale3d(1.03, 1.03, 1.03);
   }
   80% {
-    -webkit-transform: scale3d(.97, .97, .97);
-    transform: scale3d(.97, .97, .97);
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97);
   }
   100% {
     opacity: 1;
@@ -376,8 +405,8 @@ hr {
 }
 
 .option {
-  margin-right: .5em;
-  -moz-transition: all .1s ease;
+  margin-right: 0.5em;
+  -moz-transition: all 0.1s ease;
 }
 
 .option:hover {
@@ -401,7 +430,7 @@ button.large {
 }
 
 button.primary {
-  color: #8FBE00;
+  color: #8fbe00;
 }
 
 #delete {
@@ -417,22 +446,37 @@ button.primary {
 
 /************* Colors *************/
 
-.green { background: #8FBE00; }
-.red { background: #E22D2D; }
-.blue { background: #008C9E; }
-.yellow { background: #F8CA00; }
-.black { background: #191919; }
-.purple { background: #993394; }
-.brown { background: #6b4d39; }
-.white { background: #fff; }
-
+.vert {
+  background: #8fbe00;
+}
+.rouge {
+  background: #e22d2d;
+}
+.bleu {
+  background: #008c9e;
+}
+.jaune {
+  background: #f8ca00;
+}
+.black {
+  background: #191919;
+}
+.violet {
+  background: #993394;
+}
+.marron {
+  background: #6b4d39;
+}
+.white {
+  background: #fff;
+}
 
 footer {
   text-align: center;
 }
 
 footer small {
-  font-size: .7em;
+  font-size: 0.7em;
 }
 
 footer a {
@@ -456,6 +500,7 @@ footer a {
     position: fixed;
     width: 100%;
     bottom: 0;
+    margin-left: 20px;
     background-color: #ece5ce;
   }
   #options button {
@@ -468,7 +513,6 @@ footer a {
   }
 }
 
-
 /* ==========================================================================
  Helper classes
  ========================================================================== */
@@ -478,18 +522,18 @@ footer a {
 */
 
 .ir {
-background-color: transparent;
-border: 0;
-overflow: hidden;
-/* IE 6/7 fallback */
-*text-indent: -9999px;
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px;
 }
 
 .ir:before {
-content: "";
-display: block;
-width: 0;
-height: 150%;
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
 }
 
 /*
@@ -497,8 +541,8 @@ height: 150%;
 */
 
 .hidden {
-display: none !important;
-visibility: hidden;
+  display: none !important;
+  visibility: hidden;
 }
 
 /*
@@ -506,14 +550,14 @@ visibility: hidden;
 */
 
 .visuallyhidden {
-border: 0;
-clip: rect(0 0 0 0);
-height: 1px;
-margin: -1px;
-overflow: hidden;
-padding: 0;
-position: absolute;
-width: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 /*
@@ -523,12 +567,12 @@ width: 1px;
 
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
-clip: auto;
-height: auto;
-margin: 0;
-overflow: visible;
-position: static;
-width: auto;
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
 }
 
 /*
@@ -536,7 +580,7 @@ width: auto;
 */
 
 .invisible {
-visibility: hidden;
+  visibility: hidden;
 }
 
 /*
@@ -553,12 +597,12 @@ visibility: hidden;
 
 .clearfix:before,
 .clearfix:after {
-content: " "; /* 1 */
-display: table; /* 2 */
+  content: " "; /* 1 */
+  display: table; /* 2 */
 }
 
 .clearfix:after {
-clear: both;
+  clear: both;
 }
 
 /*
@@ -567,7 +611,7 @@ clear: both;
 */
 
 .clearfix {
-*zoom: 1;
+  *zoom: 1;
 }
 
 /* ==========================================================================
@@ -576,23 +620,23 @@ clear: both;
  Modify as content requires.
  ========================================================================== */
 
- @media only screen and (min-width: 35em) {
+@media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
 }
 
 @media print,
-(-o-min-device-pixel-ratio: 5/4),
-(-webkit-min-device-pixel-ratio: 1.25),
-(min-resolution: 120dpi) {
+  (-o-min-device-pixel-ratio: 5/4),
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */
 }
 
 /* ==========================================================================
  Print styles.
- Inlined to avoid required HTTP connection: h5bp.com/r
+ Inlined to avoid requirouge HTTP connection: h5bp.com/r
  ========================================================================== */
 
- @media print {
+@media print {
   * {
     background: transparent !important;
     color: #000 !important; /* Black prints faster: h5bp.com/s */
@@ -617,9 +661,9 @@ clear: both;
    * Don't show links for images, or javascript/internal links
    */
 
-   .ir a:after,
-   a[href^="javascript:"]:after,
-   a[href^="#"]:after {
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
     content: "";
   }
 
