@@ -247,10 +247,10 @@ hr {
   margin-top: 15px;
 }
 .hit {
-  background-color: #000;
+  background-color: #fff;
 }
 .almost {
-  background-color: #fff;
+  background-color: #000;
 }
 
 #modalMessage {
@@ -464,7 +464,7 @@ button.primary {
 .violet {
   background: #993394;
 }
-.marron {
+.brown {
   background: #6b4d39;
 }
 .white {

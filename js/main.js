@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  var code = [], // Color sequence the player needs to guess
+  var code = [], // Séquence de couleurs que le joueur doit deviner
     guess = [], // Color sequence of player's guesses
     options = document.getElementsByClassName("option"),
     inputRows = document.getElementsByClassName("guess"),
@@ -55,7 +55,7 @@
     var isMatch = true;
     var codeCopy = code.slice(0);
 
-    // First check if there are any pegs that are the right color in the right place
+    // Vérifiez d'abord s'il y a des chevilles de la bonne couleur à la bonne place.
     for (var i = 0; i < code.length; i++) {
       if (guess[i] === code[i]) {
         insertPeg("hit");
@@ -64,7 +64,7 @@
       } else isMatch = false;
     }
 
-    // Then check if there are any pegs that are the right color but NOT in the right place
+    // Vérifiez ensuite s'il y a des chevilles qui sont de la bonne couleur mais PAS au bon endroit.
     for (var j = 0; j < code.length; j++) {
       if (codeCopy.indexOf(guess[j]) !== -1) {
         insertPeg("almost");
@@ -72,8 +72,8 @@
       }
     }
 
-    hintIncrement += 1; // Set the next row of hints as available
-    guess = []; // Reset guess sequence
+    hintIncrement += 1; // Définir la rangée suivante d'indices comme disponible
+    guess = []; // Réinitialisation de la séquence de devinette
 
     return isMatch;
   }
@@ -92,18 +92,20 @@
         inputRows[inputRows.length - rowIncrement].getElementsByClassName(
           "socket"
         );
-      slots[guess.length - 1].className = "socket"; // Insert node into page
+      slots[guess.length - 1].className = "socket"; // Insérer un nœud dans une page
       guess.pop();
     }
   }
 
   function newGame() {
-    guess = []; // Reset guess array
+    guess = []; // Remise à zéro du tableau des suppositions
     clearBoard();
-    rowIncrement = 1; // Set the first row of sockets as available for guesses
-    hintIncrement = 1; // Set the first row of sockets as available for hints
+    // Définissez la première rangée de cases comme étant disponible pour les suppositions.
+    rowIncrement = 1; 
+    // Définir la première rangée de cases comme disponible pour les hints.
+    hintIncrement = 1; 
     hideModal();
-    gameSetup(); // Prepare the game
+    gameSetup(); // Préparer le jeu
   }
 
   function hideModal() {
@@ -111,7 +113,7 @@
   }
 
   function clearBoard() {
-    // Clear the guess sockets
+    // Effacer le jeu
     for (var i = 0; i < inputRows.length; i++) {
       inputRows[i].innerHTML = "";
       for (var j = 0; j < 4; j++) {
@@ -121,7 +123,7 @@
       }
     }
 
-    // Clear the hint sockets
+    // Effacer les cases hint
     for (var i = 0; i < hintContainer.length; i++) {
       var socketCollection = hintContainer[i].getElementsByClassName("socket");
       for (var j = 0; j < 4; j++) {
@@ -129,26 +131,26 @@
       }
     }
 
-    // Reset secret code sockets
+    // Réinitialisation des cases de code secret
     for (var i = 0; i < secretSockets.length; i++) {
       secretSockets[i].className = "secret socket";
       secretSockets[i].innerHTML = "?";
     }
 
-    document.getElementsByTagName("body")[0].className = ""; // Reset background
+    document.getElementsByTagName("body")[0].className = ""; // Reinit Background
   }
 
-  // Creates a color sequence that the player needs to guess
+  // Création une séquence de couleurs que le joueur doit deviner.
   function generateSecretCode(min, max) {
     for (var i = 0; i < 4; i++)
       code[i] = Math.floor(Math.random() * (max - min)) + min;
   }
 
-  // Once the player runs out of guesses or crack the code - the sequence is revealed
+  // Une fois que le joueur n'a plus de réponses ou qu'il a déchiffré le code, la séquence est révélée.
   function revealCode() {
     for (var i = 0; i < secretSockets.length; i++) {
       secretSockets[i].className += " " + pegs[code[i]];
-      secretSockets[i].innerHTML = ""; // Remove "?" from the socket
+      secretSockets[i].innerHTML = ""; // Retirer le " ?" de la case
     }
   }
 
@@ -167,7 +169,7 @@
 
     if (state === "won") {
       modalMessage.innerHTML =
-        '<h2>Vous avez trouvé le code!</h2> <p>Félicitations! </p> <button class="large" id="hideModal">OK</button> <button id="restartGame" class="large primary">Restart</button>';
+        '<h2>Vous avez trouvé le code!</h2> <p>Félicitations! </p> <button class="large" id="hideModal">OK</button> <button id="restartGame" class="large primary">Redémarrer</button>';
       document.getElementById("restartGame").onclick = newGame;
       document.getElementById("hideModal").onclick = hideModal;
     } else
@@ -177,5 +179,5 @@
     document.getElementById("hideModal").onclick = hideModal;
   }
 
-  gameSetup(); // Run the game
+  gameSetup(); // Démarre le jeu
 })();
